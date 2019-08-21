@@ -1,0 +1,17 @@
+constants:
+  root_url: <%= ENV['PW_ROOT_URL']%>
+
+  cloudfront:
+    domain: <%= ENV['PW_CLOUDFRONT_DOMAIN'] %>
+
+  pepo_api:
+    root_url: <%= ENV['PW_PA_ROOT_URL'] %>
+    cookie_domain: <%= ENV['PW_PA_COOKIE_DOMAIN'] %>
+    basic_auth_user: <%= ENV['PW_PA_BASIC_AUTH_USER'].to_s %>
+    basic_auth_pass: <%= ENV['PW_PA_BASIC_AUTH_PASS'].to_s %>
+    open_timeout: 5
+    read_timeout: 5
+
+  basic_auth:
+    username: <%= ENV['PW_BASIC_AUTH_USERNAME'] %>
+    password: <%= ENV['PW_BASIC_AUTH_PASSWORD'] %>
