@@ -1,0 +1,61 @@
+<div class="container">
+  <br/>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+  <br/>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Social links</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+      <th scope="col">Admin action</th>
+      <th scope="col">Submission</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% @search_response[:search_results].each do |result| %>
+
+      <% user_id = result[:payload][:user_id] %>
+      <% video_id = result[:payload][:video_id] %>
+
+      <tr>
+        <td scope="col">
+          <%= @search_response[:users][user_id][:name].capitalize %>
+          <br/>
+          <%= @search_response[:users][user_id][:user_name] %>
+        </td>
+        <td scope="col">Social links - NA now</td>
+        <td scope="col"><%= @search_response[:users][user_id][:status] %></td>
+        <td scope="col">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Approve
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+              Decline
+            </label>
+          </div>
+        </td>
+        <td scope="col">Admin details here</td>
+        <td scope="col"><a href="#"></a></td>
+        <td scope="col"><button class="btn btn-outline-danger">Save</button></td>
+      </tr>
+
+    <% end %>
+
+    </tbody>
+  </table>
+
+</div>
